@@ -3,9 +3,74 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { Toaster } from "react-hot-toast";
 
+const baseUrl = "https://shahzeb-portfolio.com"; // Replace with your actual domain
+
 export const metadata: Metadata = {
-  title: "Portfolio | Muhammad Shahzeb",
-  description: "Portfolio of System Observer",
+  metadataBase: new URL(baseUrl),
+  title: {
+    default: "Muhammad Shahzeb | Full-Stack Developer & UI/UX Designer",
+    template: "%s | Muhammad Shahzeb",
+  },
+  description: "Explore the portfolio of Muhammad Shahzeb, a passionate Full-Stack Developer and UI/UX Designer specializing in building elite web experiences and robust systems.",
+  keywords: [
+    "Muhammad Shahzeb",
+    "Shahzeb Portfolio",
+    "Full-Stack Developer",
+    "UI/UX Designer",
+    "Web Development",
+    "Next.js Portfolio",
+    "React Developer",
+    "MERN Stack",
+    "System Observer",
+    "Software Engineer Portfolio"
+  ],
+  authors: [{ name: "Muhammad Shahzeb" }],
+  creator: "Muhammad Shahzeb",
+  publisher: "Muhammad Shahzeb",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: baseUrl,
+    siteName: "Muhammad Shahzeb",
+    title: "Muhammad Shahzeb | Full-Stack Developer & UI/UX Designer",
+    description: "Explore the portfolio of Muhammad Shahzeb, showcasing elite web experiences and robust systems.",
+    images: [
+      {
+        url: "/og-image.png", // Ensure you have an image at public/og-image.png
+        width: 1200,
+        height: 630,
+        alt: "Muhammad Shahzeb Portfolio Preview",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Muhammad Shahzeb | Full-Stack Developer & UI/UX Designer",
+    description: "Explore the portfolio of Muhammad Shahzeb, showcasing elite web experiences and robust systems.",
+    images: ["/og-image.png"],
+    creator: "@shahzeb_dev", // Update with your actual Twitter handle if you have one
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/apple-touch-icon.png", // Optional: Add this to public folder
+  },
 };
 
 export default function RootLayout({
